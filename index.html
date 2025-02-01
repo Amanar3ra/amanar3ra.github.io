@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Arora Portfolio</title>
+    <link rel="stylesheet" href="layout.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="project.js" defer></script>
+
+    <style>
+        .banner #canvas {
+            position: absolute;
+            /* background-color: transparent; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <nav class="flex justify-between items-center bg-white shadow-md p-4 relative">
+        <div class="text-xl font-bold">Aman Arora</div>
+        <ul class="hidden md:flex space-x-4">
+            <li><a href="#about" class="hover:text-blue-500">About</a></li>
+            <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
+            <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+            <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+        <div class="md:hidden flex items-center">
+            <button id="menu-button" onclick="toggleMenu()" class="focus:outline-none">
+                <div class="space-y-1">
+                    <div class="w-6 h-0.5 bg-black"></div>
+                    <div class="w-6 h-0.5 bg-black"></div>
+                    <div class="w-6 h-0.5 bg-black"></div>
+                </div>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu"
+            class="hidden flex flex-col space-y-4 bg-white shadow-md absolute top-full left-0 w-full p-4 z-10">
+            <li><a href="#about" class="hover:text-blue-500">About</a></li>
+            <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
+            <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+            <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+    </nav>
+
+    <ul id="mobile-menu"
+        class="hidden flex flex-col space-y-4 bg-white shadow-md absolute top-full left-0 w-full p-4 md:hidden">
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+    </ul>
+
+
+    <div class="banner">
+        <section id="profile" class="flex flex-col md:flex-row items-center justify-around bg-white shadow-md p-8">
+            <img src="./required/profile_pic.jpeg" alt="Aman's profile picture"
+                class="w-[400px] h-[450px] object-cover rounded-lg" />
+            <div class="text-center md:text-left mt-6 md:mt-0">
+                <p class="text-xl">Hello, I'm</p>
+                <h1 class="text-4xl font-bold">Aman Arora</h1>
+                <p class="text-lg text-gray-600">Full-Stack Developer</p>
+                <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600"
+                    onclick="downloadCV()">Download CV</button>
+                    <button class="bg-gray-800 text-white px-4 py-2 rounded shadow hover:bg-gray-900"
+                        onclick="location.href='./#contact'">Contact Info</button>
+                </div>
+                <div class="mt-4 flex space-x-4 justify-center md:justify-start">
+                    <img src="./required/linkedin.png" alt="LinkedIn" class="w-8 h-8 cursor-pointer"
+                        onclick="location.href='https://www.linkedin.com/in/amanar3ra/'" />
+                    <img src="./required/github.png" alt="GitHub" class="w-8 h-8 cursor-pointer"
+                        onclick="location.href='https://github.com/Amanar3ra'" />
+                </div>
+            </div>
+        </section>
+
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <section id="about" class="bg-gray-200 py-12">
+        <div class="text-center">
+            <p class="text-xl text-gray-600">Get To Know More</p>
+            <h2 class="text-3xl font-bold">About Me</h2>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-around mt-8">
+            <div class="relative bg-gray-200 rounded-full p-2">
+                <img src="./required/about_pic.jpeg" alt="Profile picture"
+                    class="w-96 h-96 rounded-full object-cover" />
+            </div>
+            <div class="max-w-md mt-6 md:mt-0">
+                <div class="flex space-x-8">
+                    <div class="text-center">
+                        <img src="./required/experience.png" alt="Experience icon" class="w-12 h-12 mx-auto" />
+                        <h3 class="text-lg font-bold">Experience</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li class="text-sm font-small">Web Manager Internship</li>
+                            <li class="text-sm font-small">Technical Support at Persistent Systems</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <img src="./required/education.png" alt="Education icon" class="w-12 h-12 mx-auto" />
+                        <h3 class="text-lg font-bold">Education</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li class="text-sm font-small">Bachelors in Computer Science (BCS)</li>
+                            <li class="text-sm font-small">Post-Grad certificate in AI with ML</li>
+                            <li class="text-sm font-small">Post-Grad certificate in Full-Stack Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="mt-6 text-gray-700">
+                    An aspiring AI web developer passionate about crafting innovative, user-friendly digital
+                    experiences. With a background in Artificial Intelligence and Machine Learning and ongoing studies
+                    in Full Stack Application Development at NSCC, I bring hands-on experience and a commitment to
+                    impactful projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="experience" class="bg-gray-300 py-12">
+        <div class="text-center mb-8">
+            <p class="text-xl text-gray-600">Explore My</p>
+            <h2 class="text-3xl font-bold">Experience</h2>
+        </div>
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Frontend Skills</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>HTML & CSS</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Tailwind & Bootstrap</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>View.js</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Backend Skills -->
+                <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Backend Skills</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Node.js</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Express.js</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>MySQL</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Postgres</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Apache</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- AI Skills -->
+                <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Artificial Intelligence Skills</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>TensorFlow</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>PyTorch</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Image Processing & Computer Vision</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>AWS Sagemaker</h4>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
+                            <div>
+                                <h4>Neural Network</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section id="projects" class="bg-gray-100 py-12">
+        <div class="text-center">
+            <p class="text-xl text-gray-600">My Work</p>
+            <h2 class="text-3xl font-bold">Projects</h2>
+        </div>
+        <div id="projects-container" class="mt-8 flex justify-center px-4">
+            <!-- Single project will be rendered dynamically here -->
+        </div>
+        <div class="mt-8 flex justify-center space-x-4">
+            <button id="prev-button" onclick="previousPage()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Previous</button>
+            <button id="next-button" onclick="nextPage()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Next</button>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="bg-gray-200 py-12">
+        <div class="text-center">
+            <p class="text-xl text-gray-600">Get in Touch</p>
+            <h2 class="text-3xl font-bold">Contact</h2>
+        </div>
+        <div class="mt-8 flex flex-col items-center">
+            <p class="text-lg">Feel free to reach out to me via LinkedIn or GitHub:</p>
+            <div class="flex space-x-4 mt-4">
+                <img src="./required/linkedin.png" alt="LinkedIn" class="w-10 h-10 cursor-pointer"
+                    onclick="location.href='https://www.linkedin.com/in/amanar3ra/'" />
+                <img src="./required/github.png" alt="GitHub" class="w-10 h-10 cursor-pointer"
+                    onclick="location.href='https://github.com/Amanar3ra'" />
+                <img src="./required/email.png" alt="GitHub" class="w-11 h-11 cursor-pointer"
+                    onclick="location.href='mailto:amanarora3dec@gmail.com'" />
+            </div>
+        </div>
+    </section>
+
+    <script src="canvas.js"></script>
+
+    <footer class="bg-gray-200 text-gray-600 py-12">
+        <div class="text-center">
+            <p class="text-sm">&copy; 2024 Aman Arora. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
