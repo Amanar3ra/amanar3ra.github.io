@@ -17,6 +17,12 @@ const projects = [
         description: "A navigational bot was built using Python, NLP, JavaScript, HTML & CSS for Humber College website to guide students to find specific resource.",
         link: "https://github.com/Amanar3ra/Chatbot-Project.git",
         image: "./required/project3.png",
+    },
+    {
+        title: "Chinook Music Player",
+        description: "The main purpose of this application is to help manage a collection of music albums and their artists. It allows users to add new albums by entering details like the album title and release year, and it links the album to a specific artist.",
+        link: "https://github.com/Amanar3ra/chinook-music-player",
+        image: "./required/chinook_music.png",
     }
 ];
 
@@ -35,7 +41,7 @@ function renderProjects() {
             <img src="${project.image}" alt="${project.title}" class="w-full h-80 object-cover rounded-lg" />
             <h3 class="text-2xl font-bold mt-4 text-center">${project.title}</h3>
             <p class="text-gray-600 mt-2 text-center">${project.description}</p>
-            <a href="${project.link}" class="text-blue-500 hover:underline mt-4 block text-center" target="new">View Project</a>
+            <a href="${project.link}" class="text-blue-600 hover:underline mt-4 block text-center" target="new">View Project</a>
         </div>
     `;
     container.innerHTML = projectCard;
