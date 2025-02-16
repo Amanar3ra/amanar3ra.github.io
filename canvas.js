@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 
 const circle = {
     radius: 20,
-    color: 'rgba(33, 150, 243, 0.5)',
+    color: 'rgb(33, 150, 243)',
     x: 0,
     y: 0,
     speed: 0.1

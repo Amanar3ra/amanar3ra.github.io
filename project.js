@@ -35,7 +35,7 @@ function renderProjects() {
             <img src="${project.image}" alt="${project.title}" class="w-full h-80 object-cover rounded-lg" />
             <h3 class="text-2xl font-bold mt-4 text-center">${project.title}</h3>
             <p class="text-gray-600 mt-2 text-center">${project.description}</p>
-            <a href="${project.link}" class="text-blue-500 hover:underline mt-4 block text-center" target="new">View Project</a>
+            <a href="${project.link}" class="text-blue-600 hover:underline mt-4 block text-center" target="new">View Project</a>
         </div>
     `;
     container.innerHTML = projectCard;
