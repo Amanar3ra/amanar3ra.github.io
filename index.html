@@ -25,19 +25,23 @@
 
 <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
     <nav class="flex justify-between items-center bg-white dark:bg-gray-900 shadow-md p-4 relative">
+        <!-- Navbar Title -->
         <div class="text-blue-600 text-xl dark:text-white font-bold">Aman Arora</div>
+    
+        <!-- Desktop Navigation Links -->
         <ul class="hidden md:flex dark:text-white space-x-4">
             <li><a href="#about" class="text-blue-500 hover:text-purple-700">About</a></li>
             <li><a href="#experience" class="text-blue-500 hover:text-purple-700">Experience</a></li>
             <li><a href="#projects" class="text-blue-500 hover:text-purple-700">Projects</a></li>
             <li><a href="#contact" class="text-blue-500 hover:text-purple-700">Contact</a></li>
         </ul>
-
-        <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white">
+    
+        <!-- Dark Mode Toggle for Desktop -->
+        <button id="dark-mode-toggle" class="hidden md:block p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white">
             🌙
         </button>
-        
-
+    
+        <!-- Mobile Menu Button -->
         <div class="md:hidden flex items-center">
             <button id="menu-button" onclick="toggleMenu()" class="focus:outline-none">
                 <div class="space-y-1">
@@ -47,24 +51,23 @@
                 </div>
             </button>
         </div>
-
+    
         <!-- Mobile Menu -->
-        <ul id="mobile-menu"
-            class="hidden flex flex-col space-y-4 bg-white shadow-md absolute top-full left-0 w-full p-4 z-10">
+        <ul id="mobile-menu" class="hidden flex flex-col space-y-4 bg-white shadow-md absolute top-full left-0 w-full p-4 z-10 dark:text-black">
             <li><a href="#about" class="hover:text-purple-500">About</a></li>
             <li><a href="#experience" class="hover:text-purple-500">Experience</a></li>
             <li><a href="#projects" class="hover:text-purple-500">Projects</a></li>
             <li><a href="#contact" class="hover:text-purple-500">Contact</a></li>
+            <!-- Dark Mode Toggle for Mobile -->
+            <li>
+                <button id="dark-mode-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white">
+                    🌙
+                </button>
+            </li>
         </ul>
     </nav>
-
-    <ul id="mobile-menu"
-        class="hidden flex flex-col space-y-4 bg-white shadow-md absolute top-full left-0 w-full p-4 md:hidden">
-        <li><a href="#about" class="hover:text-purple-500">About</a></li>
-        <li><a href="#experience" class="hover:text-purple-500">Experience</a></li>
-        <li><a href="#projects" class="hover:text-purple-500">Projects</a></li>
-        <li><a href="#contact" class="hover:text-purple-500">Contact</a></li>
-    </ul>
+    
+    
 
     <script>
         tailwind.config = {
@@ -76,30 +79,42 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const toggleButton = document.getElementById("dark-mode-toggle");
-        const root = document.documentElement;
-
-        function applyDarkMode(isDark) {
-            if (isDark) {
-                root.classList.add("dark");
-            } else {
-                root.classList.remove("dark");
+            const toggleButtonDesktop = document.getElementById("dark-mode-toggle");
+            const toggleButtonMobile = document.getElementById("dark-mode-toggle-mobile");
+            const root = document.documentElement;
+    
+            // Function to apply dark mode based on the isDark flag
+            function applyDarkMode(isDark) {
+                if (isDark) {
+                    root.classList.add("dark");
+                } else {
+                    root.classList.remove("dark");
+                }
+                // Update the button's text content based on the theme
+                toggleButtonDesktop.textContent = isDark ? "☀️" : "🌙";
+                toggleButtonMobile.textContent = isDark ? "☀️" : "🌙";
+                // Store the selected theme in localStorage
+                localStorage.setItem("theme", isDark ? "dark" : "light");
             }
-        toggleButton.textContent = isDark ? "☀️" : "🌙";
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-        }
-
-        toggleButton.addEventListener("click", function () {
-            const isDarkMode = !root.classList.contains("dark");
-            applyDarkMode(isDarkMode);
+    
+            // Event listener for desktop toggle button
+            toggleButtonDesktop.addEventListener("click", function () {
+                const isDarkMode = !root.classList.contains("dark");
+                applyDarkMode(isDarkMode);
+            });
+    
+            // Event listener for mobile toggle button
+            toggleButtonMobile.addEventListener("click", function () {
+                const isDarkMode = !root.classList.contains("dark");
+                applyDarkMode(isDarkMode);
+            });
+    
+            // Apply the saved theme when the page loads
+            const savedTheme = localStorage.getItem("theme") === "dark";
+            applyDarkMode(savedTheme);
         });
-
-        // Apply stored theme on page load
-        const savedTheme = localStorage.getItem("theme") === "dark";
-        applyDarkMode(savedTheme);
-        });
-
     </script>
+    
     
 
 
@@ -159,7 +174,7 @@
                         </ul>
                     </div>
                 </div>
-                <p class="mt-6 text-gray-700 dark:text-white">
+                <p class="mt-6 text-gray-700 dark:text-white text-center md:text-left">
                     An aspiring AI web developer passionate about crafting innovative, user-friendly digital
                     experiences. With a background in Artificial Intelligence and Machine Learning and ongoing studies
                     in Full Stack Application Development at NSCC, I bring hands-on experience and a commitment to
@@ -256,7 +271,7 @@
                         <li class="flex items-center space-x-4">
                             <img src="./required/checkmark.png" alt="Check" class="w-6 h-6" />
                             <div>
-                                <h4 class="dark:text-black">Image Processing & Computer Vision</h4>
+                                <h4 class="dark:text-black">Image Processing</h4>
                             </div>
                         </li>
                         <li class="flex items-center space-x-4">
@@ -303,7 +318,7 @@
             <h2 class="text-3xl font-bold">Contact</h2>
         </div>
         <div class="mt-8 flex flex-col items-center">
-            <p class="text-lg">Feel free to reach out to me via LinkedIn or GitHub:</p>
+            <p class="text-lg text-center md:text-left">Feel free to reach out to me via LinkedIn or GitHub:</p>
             <div class="flex space-x-4 mt-4">
                 <img src="./required/linkedin.png" alt="LinkedIn" class="w-10 h-10 cursor-pointer"
                     onclick="location.href='https://www.linkedin.com/in/amanar3ra/'" />
