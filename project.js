@@ -1,6 +1,18 @@
 /*Pagination Reference -> https://www.youtube.com/watch?v=mslD-bpvjiU*/
 const projects = [
     {
+        title: "Navigational bot",
+        description: "A navigational bot was built using Python, NLP, JavaScript, HTML & CSS for Humber College website to guide students to find specific resource.",
+        link: "https://github.com/Amanar3ra/Chatbot-Project.git",
+        image: "./required/project3.png",
+    },
+    {
+        title: "Weatherflex Workout App",
+        description: "Developed a browser-based fitness application that dynamically suggests exercises based on real-time weather conditions.",
+        link: "https://github.com/NSCC-ITC-Winter2025-WEBD5015-700-MCa/webd5015-project-weatherflex-workouts",
+        image: "./required/workout_app.png",
+    },
+    {
         title: "Business Website",
         description: "Developed and Managed a website for mattress business.",
         link: "https://thebedroomboutiqueltd.com/",
@@ -11,12 +23,6 @@ const projects = [
         description: "A music player system was built on MySQL database and python using Tkinter libraries and pygame module. The system performs various functions such as pause, play, next, previous, store playlists in database and is compatible on all devices.",
         link: "https://github.com/Amanar3ra/Music_Player.git",
         image: "./required/project2.png",
-    },
-    {
-        title: "Navigational bot",
-        description: "A navigational bot was built using Python, NLP, JavaScript, HTML & CSS for Humber College website to guide students to find specific resource.",
-        link: "https://github.com/Amanar3ra/Chatbot-Project.git",
-        image: "./required/project3.png",
     },
     {
         title: "Chinook Music Player",
